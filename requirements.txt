@@ -1,0 +1,13 @@
+# Requirements for Burp SQL Injection Testing Tool
+# Core dependencies
+requests>=2.28.0
+lxml>=4.9.0
+urllib3>=1.26.0
+
+# Optional: For enhanced XML parsing
+beautifulsoup4>=4.11.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+black>=22.0.0
+flake8>=4.0.0

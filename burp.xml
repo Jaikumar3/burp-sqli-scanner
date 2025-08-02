@@ -1,0 +1,2559 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2025.6.5" exportTime="Fri Aug 01 23:01:06 IST 2025">
+  <item>
+    <time>Fri Aug 01 23:00:25 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/login.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /login.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/secured/newuser.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5745</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:30:27 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5523
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>login page</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<h3>If you are already registered please enter your login information below:</h3><br>
+	<form name="loginform" method="post" action="userinfo.php">
+	<table cellpadding="4" cellspacing="1">
+		<tr><td>Username : </td><td><input name="uname" type="text" size="20" style="width:120px;"></td></tr>
+		<tr><td>Password : </td><td><input name="pass" type="password" size="20" style="width:120px;"></td></tr>
+		<tr><td colspan="2" align="right"><input type="submit" value="login" style="width:75px;"></td></tr>
+	</table>
+	</form>
+  	</div>
+	<div class="story">
+	<h3>
+        You can also <a href="signup.php">signup here</a>.<br>
+        Signup disabled. Please use the username <font color='red'>test</font> and the password <font color='red'>test</font>. 
+    </h3>
+	</div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 23:00:21 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/secured/newuser.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/secured/newuser.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /secured/newuser.php HTTP/1.1
+Host: testphp.vulnweb.com
+Content-Length: 120
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Origin: http://testphp.vulnweb.com
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/signup.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+uuname=dsds&upass=admin&upass2=admin&urname=dsd&ucc=dsd&uemail=sdds%40gmail.com&uphone=dssd&uaddress=dsdss&signup=signup]]></request>
+    <status>200</status>
+    <responselength>974</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:30:23 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 753
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>add new user</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="masthead"> 
+  <h1 id="siteName">ACUNETIX ART</h1> 
+</div>
+<div id="content">
+	<p>You have been introduced to our database with the above informations:</p><ul><li>Username: dsds</li><li>Password: admin</li><li>Name: dsd</li><li>Address: dsdss</li><li>E-Mail: sdds@gmail.com</li><li>Phone number: dssd</li><li>Credit card: dsd</li></ul><p>Now you can login from <a href='http://testphp.vulnweb.com/login.php'>here.</p></div>
+</body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 23:00:01 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/secured/newuser.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/secured/newuser.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /secured/newuser.php HTTP/1.1
+Host: testphp.vulnweb.com
+Content-Length: 104
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Origin: http://testphp.vulnweb.com
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/signup.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+uuname=dsds&upass=dsd&upass2=sds&urname=dsd&ucc=dsd&uemail=sdds&uphone=dssd&uaddress=dsdss&signup=signup]]></request>
+    <status>200</status>
+    <responselength>741</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:30:03 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 520
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>add new user</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="masthead"> 
+  <h1 id="siteName">ACUNETIX ART</h1> 
+</div>
+<div id="content">
+	<p>Error: the retyped password do not match the password please press back and reintroduce correctly!</p></div>
+</body>
+</html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:54 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/signup.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/signup.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /signup.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/login.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>6255</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:55 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 6033
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>signup</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+<div class="story">
+	<h2 id="pageName">Signup new user</h2>
+	<h4>Please do not enter real information here.</h4>
+	<h4>If you press the submit button you will be transferred to asecured connection.</h4>
+	<form name="form1" method="post" action="/secured/newuser.php">
+		<table border="0" cellspacing="1" cellpadding="4">
+			<tr><td valign="top">Username:</td><td><input type="text" name="uuname" style="width:200px"></td></tr>
+			<tr><td valign="top">Password:</td><td><input type="password" name="upass" style="width:200px"></td></tr>
+			<tr><td valign="top">Retype password:</td><td><input type="password" name="upass2" style="width:200px"></td></tr>
+			<tr><td valign="top">Name:</td><td><input type="text" name="urname" style="width:200px"></td></tr>
+			<tr><td valign="top">Credit card number:</td><td><input type="text" name="ucc" style="width:200px"></td></tr>
+			<tr><td valign="top">E-Mail:</td><td><input type="text" name="uemail" style="width:200px"></td></tr>
+			<tr><td valign="top">Phone number:</td><td><input type="text" name="uphone" style="width:200px"></td></tr>
+			<tr><td valign="top">Address:</td><td><textarea wrap="soft" name="uaddress" rows="5" style="width:200px"></textarea></td></tr>
+			<tr><td colspan="2" align="right"><input type="submit" value="signup" name="signup"></td></tr>
+		</table>
+	</form>
+</div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:49 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/login.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /login.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/login.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5745</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:51 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5523
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>login page</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<h3>If you are already registered please enter your login information below:</h3><br>
+	<form name="loginform" method="post" action="userinfo.php">
+	<table cellpadding="4" cellspacing="1">
+		<tr><td>Username : </td><td><input name="uname" type="text" size="20" style="width:120px;"></td></tr>
+		<tr><td>Password : </td><td><input name="pass" type="password" size="20" style="width:120px;"></td></tr>
+		<tr><td colspan="2" align="right"><input type="submit" value="login" style="width:75px;"></td></tr>
+	</table>
+	</form>
+  	</div>
+	<div class="story">
+	<h3>
+        You can also <a href="signup.php">signup here</a>.<br>
+        Signup disabled. Please use the username <font color='red'>test</font> and the password <font color='red'>test</font>. 
+    </h3>
+	</div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:46 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/login.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /login.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/login.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5745</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:48 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5523
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>login page</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<h3>If you are already registered please enter your login information below:</h3><br>
+	<form name="loginform" method="post" action="userinfo.php">
+	<table cellpadding="4" cellspacing="1">
+		<tr><td>Username : </td><td><input name="uname" type="text" size="20" style="width:120px;"></td></tr>
+		<tr><td>Password : </td><td><input name="pass" type="password" size="20" style="width:120px;"></td></tr>
+		<tr><td colspan="2" align="right"><input type="submit" value="login" style="width:75px;"></td></tr>
+	</table>
+	</form>
+  	</div>
+	<div class="story">
+	<h3>
+        You can also <a href="signup.php">signup here</a>.<br>
+        Signup disabled. Please use the username <font color='red'>test</font> and the password <font color='red'>test</font>. 
+    </h3>
+	</div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:45 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/login.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /login.php HTTP/1.1
+Host: testphp.vulnweb.com
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/login.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5745</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:46 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5523
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>login page</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<h3>If you are already registered please enter your login information below:</h3><br>
+	<form name="loginform" method="post" action="userinfo.php">
+	<table cellpadding="4" cellspacing="1">
+		<tr><td>Username : </td><td><input name="uname" type="text" size="20" style="width:120px;"></td></tr>
+		<tr><td>Password : </td><td><input name="pass" type="password" size="20" style="width:120px;"></td></tr>
+		<tr><td colspan="2" align="right"><input type="submit" value="login" style="width:75px;"></td></tr>
+	</table>
+	</form>
+  	</div>
+	<div class="story">
+	<h3>
+        You can also <a href="signup.php">signup here</a>.<br>
+        Signup disabled. Please use the username <font color='red'>test</font> and the password <font color='red'>test</font>. 
+    </h3>
+	</div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:44 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/userinfo.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/userinfo.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /userinfo.php HTTP/1.1
+Host: testphp.vulnweb.com
+Content-Length: 20
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Origin: http://testphp.vulnweb.com
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/login.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+uname=dsds&pass=dsds]]></request>
+    <status>302</status>
+    <responselength>258</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 302 Found
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:46 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Location: login.php
+Content-Length: 14
+
+you must login]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:41 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/login.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/login.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /login.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/search.php?test=query
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5745</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:42 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5523
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>login page</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<h3>If you are already registered please enter your login information below:</h3><br>
+	<form name="loginform" method="post" action="userinfo.php">
+	<table cellpadding="4" cellspacing="1">
+		<tr><td>Username : </td><td><input name="uname" type="text" size="20" style="width:120px;"></td></tr>
+		<tr><td>Password : </td><td><input name="pass" type="password" size="20" style="width:120px;"></td></tr>
+		<tr><td colspan="2" align="right"><input type="submit" value="login" style="width:75px;"></td></tr>
+	</table>
+	</form>
+  	</div>
+	<div class="story">
+	<h3>
+        You can also <a href="signup.php">signup here</a>.<br>
+        Signup disabled. Please use the username <font color='red'>test</font> and the password <font color='red'>test</font>. 
+    </h3>
+	</div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:41 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/userinfo.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/userinfo.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /userinfo.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/search.php?test=query
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>302</status>
+    <responselength>258</responselength>
+    <mimetype>text</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 302 Found
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:42 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Location: login.php
+Content-Length: 14
+
+you must login]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:36 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/search.php?test=query]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/search.php?test=query]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /search.php?test=query HTTP/1.1
+Host: testphp.vulnweb.com
+Content-Length: 26
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Origin: http://testphp.vulnweb.com
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/guestbook.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+searchFor=dsds&goButton=go]]></request>
+    <status>200</status>
+    <responselength>4995</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:38 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 4773
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>search</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<h2 id='pageName'>searched for: dsds</h2></div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:33 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/guestbook.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/guestbook.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /guestbook.php HTTP/1.1
+Host: testphp.vulnweb.com
+Content-Length: 48
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Origin: http://testphp.vulnweb.com
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/guestbook.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+name=anonymous+user&text=dsdd&submit=add+message]]></request>
+    <status>200</status>
+    <responselength>5630</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:35 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5408
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>guestbook</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<table width="100%" cellpadding="4" cellspacing="1"><tr><td colspan="2"><h2>Our guestbook</h2></td></tr><tr><td align="left" valign="middle" style="background-color:#F5F5F5"><strong>anonymous user</strong></td><td align="right" style="background-color:#F5F5F5">08.01.2025, 5:29 pm</td></tr><tr><td colspan="2"><img src="/images/remark.gif">&nbsp;&nbsp;dsdd</td></tr></table>	 </div>
+	  <div class="story">
+	  	<form action="" method="post" name="faddentry">
+			<input type="hidden" name="name" value="anonymous user">
+			<textarea name="text" rows="5" wrap="VIRTUAL" style="width:500px;"></textarea>
+			<br>
+			<input type="submit" name="submit" value="add message">
+		</form>
+	  </div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:31 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/guestbook.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/guestbook.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /guestbook.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/artists.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5612</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:33 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5390
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>guestbook</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<table width="100%" cellpadding="4" cellspacing="1"><tr><td colspan="2"><h2>Our guestbook</h2></td></tr><tr><td align="left" valign="middle" style="background-color:#F5F5F5"><strong></strong></td><td align="right" style="background-color:#F5F5F5">08.01.2025, 5:29 pm</td></tr><tr><td colspan="2"><img src="/images/remark.gif">&nbsp;&nbsp;</td></tr></table>	 </div>
+	  <div class="story">
+	  	<form action="" method="post" name="faddentry">
+			<input type="hidden" name="name" value="anonymous user">
+			<textarea name="text" rows="5" wrap="VIRTUAL" style="width:500px;"></textarea>
+			<br>
+			<input type="submit" name="submit" value="add message">
+		</form>
+	  </div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:27 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/artists.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/artists.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /artists.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/guestbook.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5550</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:29 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5328
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>artists</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class='story'><a href='artists.php?artist=1'><h3>r4w8173</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=1','comment','width=500,height=400')">comment on this artist</a></p></div><div class='story'><a href='artists.php?artist=2'><h3>Blad3</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=2','comment','width=500,height=400')">comment on this artist</a></p></div><div class='story'><a href='artists.php?artist=3'><h3>lyzae</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=3','comment','width=500,height=400')">comment on this artist</a></p></div>	
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:24 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/guestbook.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/guestbook.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[POST /guestbook.php HTTP/1.1
+Host: testphp.vulnweb.com
+Content-Length: 49
+Cache-Control: max-age=0
+Accept-Language: en-US,en;q=0.9
+Origin: http://testphp.vulnweb.com
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/guestbook.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+name=anonymous+user&text=sdsds&submit=add+message]]></request>
+    <status>200</status>
+    <responselength>5631</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:26 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5409
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>guestbook</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<table width="100%" cellpadding="4" cellspacing="1"><tr><td colspan="2"><h2>Our guestbook</h2></td></tr><tr><td align="left" valign="middle" style="background-color:#F5F5F5"><strong>anonymous user</strong></td><td align="right" style="background-color:#F5F5F5">08.01.2025, 5:29 pm</td></tr><tr><td colspan="2"><img src="/images/remark.gif">&nbsp;&nbsp;sdsds</td></tr></table>	 </div>
+	  <div class="story">
+	  	<form action="" method="post" name="faddentry">
+			<input type="hidden" name="name" value="anonymous user">
+			<textarea name="text" rows="5" wrap="VIRTUAL" style="width:500px;"></textarea>
+			<br>
+			<input type="submit" name="submit" value="add message">
+		</form>
+	  </div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:21 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/guestbook.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/guestbook.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /guestbook.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/artists.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5612</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:23 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5390
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>guestbook</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class="story">
+	<table width="100%" cellpadding="4" cellspacing="1"><tr><td colspan="2"><h2>Our guestbook</h2></td></tr><tr><td align="left" valign="middle" style="background-color:#F5F5F5"><strong></strong></td><td align="right" style="background-color:#F5F5F5">08.01.2025, 5:29 pm</td></tr><tr><td colspan="2"><img src="/images/remark.gif">&nbsp;&nbsp;</td></tr></table>	 </div>
+	  <div class="story">
+	  	<form action="" method="post" name="faddentry">
+			<input type="hidden" name="name" value="anonymous user">
+			<textarea name="text" rows="5" wrap="VIRTUAL" style="width:500px;"></textarea>
+			<br>
+			<input type="submit" name="submit" value="add message">
+		</form>
+	  </div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:19 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/artists.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/artists.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /artists.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/cart.php
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5550</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:21 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5328
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>artists</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class='story'><a href='artists.php?artist=1'><h3>r4w8173</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=1','comment','width=500,height=400')">comment on this artist</a></p></div><div class='story'><a href='artists.php?artist=2'><h3>Blad3</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=2','comment','width=500,height=400')">comment on this artist</a></p></div><div class='story'><a href='artists.php?artist=3'><h3>lyzae</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=3','comment','width=500,height=400')">comment on this artist</a></p></div>	
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:17 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/cart.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/cart.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /cart.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5125</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:19 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 4903
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>you cart</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	
+			<h2 id='pageName'>Error</h2>
+			  <div class='story'>
+				<p>You are not logged on. To log on please visit our <a href='login.php'>login page</a></p>
+			  </div>
+			</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:59:16 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/artists.php]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/artists.php]]></path>
+    <extension>php</extension>
+    <request base64="false"><![CDATA[GET /artists.php HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://testphp.vulnweb.com/
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5550</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:29:18 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 5328
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>artists</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<div class='story'><a href='artists.php?artist=1'><h3>r4w8173</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=1','comment','width=500,height=400')">comment on this artist</a></p></div><div class='story'><a href='artists.php?artist=2'><h3>Blad3</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=2','comment','width=500,height=400')">comment on this artist</a></p></div><div class='story'><a href='artists.php?artist=3'><h3>lyzae</h3></a><p><a href='#' onClick="window.open('./comment.php?aid=3','comment','width=500,height=400')">comment on this artist</a></p></div>	
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Fri Aug 01 22:52:04 IST 2025</time>
+    <url><![CDATA[http://testphp.vulnweb.com/]]></url>
+    <host ip="44.228.249.3">testphp.vulnweb.com</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET / HTTP/1.1
+Host: testphp.vulnweb.com
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+]]></request>
+    <status>200</status>
+    <responselength>5180</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Server: nginx/1.19.0
+Date: Fri, 01 Aug 2025 17:22:06 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1
+Content-Length: 4958
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/main_dynamic_template.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<!-- InstanceBeginEditable name="document_title_rgn" -->
+<title>Home of Acunetix Art</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- InstanceBeginEditable name="headers_rgn" -->
+<!-- here goes headers headers -->
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+</head>
+<body> 
+<div id="mainLayer" style="position:absolute; width:700px; z-index:1">
+<div id="masthead"> 
+  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
+  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
+  <div id="globalNav"> 
+      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+	<td align="left">
+		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
+		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
+		<a href="guestbook.php">guestbook</a> | 
+		<a href="AJAX/index.php">AJAX Demo</a>
+	</td>
+	<td align="right">
+		</td>
+	</tr></table>
+  </div> 
+</div> 
+<!-- end masthead --> 
+
+<!-- begin content -->
+<!-- InstanceBeginEditable name="content_rgn" -->
+<div id="content">
+	<h2 id="pageName">welcome to our page</h2>
+	  <div class="story">
+		<h3>Test site for Acunetix WVS.</h3>
+	  </div>
+</div>
+<!-- InstanceEndEditable -->
+<!--end content -->
+
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="search.php?test=query" method="post"> 
+      <label>search art</label> 
+      <input name="searchFor" type="text" size="10"> 
+      <input name="goButton" type="submit" value="go"> 
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="categories.php">Browse categories</a></li> 
+      <li><a href="artists.php">Browse artists</a></li> 
+      <li><a href="cart.php">Your cart</a></li> 
+      <li><a href="login.php">Signup</a></li>
+	  <li><a href="userinfo.php">Your profile</a></li>
+	  <li><a href="guestbook.php">Our guestbook</a></li>
+		<li><a href="AJAX/index.php">AJAX Demo</a></li>
+	  </li> 
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>Links</h3> 
+    <ul> 
+      <li><a href="http://www.acunetix.com">Security art</a></li> 
+	  <li><a href="https://www.acunetix.com/vulnerability-scanner/php-security-scanner/">PHP scanner</a></li>
+	  <li><a href="https://www.acunetix.com/blog/articles/prevent-sql-injection-vulnerabilities-in-php-applications/">PHP vuln help</a></li>
+	  <li><a href="http://www.eclectasy.com/Fractal-Explorer/index.html">Fractal Explorer</a></li> 
+    </ul> 
+  </div> 
+  <div id="advert"> 
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="107" height="66">
+        <param name="movie" value="Flash/add.swf">
+        <param name=quality value=high>
+        <embed src="Flash/add.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="107" height="66"></embed>
+      </object>
+    </p>
+  </div> 
+</div> 
+
+<!--end navbar --> 
+<div id="siteInfo">  <a href="http://www.acunetix.com">About Us</a> | <a href="privacy.php">Privacy Policy</a> | <a href="mailto:wvs@acunetix.com">Contact Us</a> | <a href="/Mod_Rewrite_Shop/">Shop</a> | <a href="/hpp/">HTTP Parameter Pollution</a> | &copy;2019
+  Acunetix Ltd 
+</div> 
+    
+    
+<br> 
+<div style="background-color:lightgray;width:100%;text-align:center;font-size:12px;padding:1px">
+<p style="padding-left:5%;padding-right:5%"><b>Warning</b>: This is not a real shop. This is an example PHP application, which is intentionally vulnerable to web attacks. It is intended to help you test Acunetix. It also helps you understand how developer errors and bad configuration may let someone break into your website. You can use it to test other tools and your manual hacking skills as well. Tip: Look for potential SQL Injections, Cross-site Scripting (XSS), and Cross-site Request Forgery (CSRF), and more.</p>
+</div>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+]]></response>
+    <comment></comment>
+  </item>
+</items>
